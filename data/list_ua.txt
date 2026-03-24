@@ -1,0 +1,32 @@
+Mozilla/5.0 (X11; Linux i686; rv:7.0.1) Gecko/20100101 Firefox/7.0.1 Iceweasel/7.0.1
+Spiderbot/Nutch-1.7
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)
+Zend_Http_Client
+Mozilla/4.0 (compatible; MSIE8.0; Windows NT 6.0) .NET CLR 2.0.50727)
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.65 Safari/537.36
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)
+Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 YaBrowser/15.2.2214.3645 Safari/537.36
+Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)
+Mozilla/5.0 (compatible; MJ12bot/v1.4.5; http://www.majestic12.co.uk/bot.php?+)
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6 (.NET CLR 3.5.30729)
+Lunascape
+AppEngine-Google; (+http://code.google.com/appengine; appid: s~websmart6)
+Mozilla/5.0 (compatible; Konqueror/2.2.2)
+ia_archiver
+Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64; Trident/7.0; .NET4.0E; .NET4.0C; Tablet PC 2.0)
+Mozilla/5.0 (Windows NT 6.3; WOW64; rv:36.0) Gecko/20100101 Firefox/36.0
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36
+Mozilla/4.0 (Compatible; Windows NT 5.1; MSIE 6.0) (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)
+Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en)
+Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)
+QuerySeekerSpider ( http://queryseeker.com/bot.html )
+curl/7.35.0
+Apache-HttpClient/4.3.5 (java 1.5)
+Mozilla/5.0 (compatible; ScoutJet; +http://www.scoutjet.com/)
+finbot
+Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 6.0)
+Mozilla/5.0

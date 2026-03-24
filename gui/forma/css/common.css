@@ -1,0 +1,13 @@
+	.left {float:left;}
+	.right {float:right;}
+	.clear {clear:both;}
+	
+	
+	/* multiselect styles */
+	.multiselect {
+		width: 500px;
+		height: 200px;
+	}
+	
+
+

